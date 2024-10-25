@@ -1,4 +1,4 @@
-package pl.cango.controller;
+package pl.cango.demo.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

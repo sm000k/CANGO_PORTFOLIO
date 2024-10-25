@@ -1,8 +1,8 @@
-package pl.cango.model;
+package pl.cango.demo.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+import lombok.Builder;
 import java.util.List;
 import java.util.UUID;
 
