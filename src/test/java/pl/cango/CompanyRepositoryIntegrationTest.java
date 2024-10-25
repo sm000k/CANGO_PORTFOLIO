@@ -24,7 +24,12 @@ public class CompanyRepositoryIntegrationTest {
 
     @Test
     void givenNewCompany_whenSave_thenCorrect() {
-        Company newCompany = new Company("Coca-Cola", "Washington","Gregorian st.","20");
+        Company newCompany = Company.builder()
+                .name("Coca-Cola")
+                .city("Washington")
+                .street("Gregorian st.")
+                .number("20")
+                .build();
         Company insertedCompany = companyRepository.save(newCompany);
         assertThat(entityManager.find(Company.class, insertedCompany.getId())).isEqualTo(newCompany);
     }
