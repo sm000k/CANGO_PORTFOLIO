@@ -2,10 +2,7 @@ package pl.cango.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.cango.model.Company;
 import pl.cango.persistence.repository.CompanyRepository;
 
@@ -26,5 +23,10 @@ public class CompanyController {
     @GetMapping ("/Company/FindAll")
     public List<Company> findAll() {
         return companyRepository.findAll();
+    }
+    @GetMapping("/Company/Search")
+    public List<Company> searchCompaniesByName(@RequestParam("name") String name) {
+
+        return companyRepository.findByNameContainingIgnoreCase(name);
     }
 }
