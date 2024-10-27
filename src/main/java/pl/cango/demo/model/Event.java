@@ -1,4 +1,4 @@
-package pl.cango.model;
+package pl.cango.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
