@@ -20,7 +20,7 @@ import java.util.UUID;
 public class Service {
 
     @Id
-    private UUID id;
+    private String id;
     private String name;
 
 

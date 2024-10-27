@@ -1,4 +1,4 @@
-package pl.cango.demo.model;
+package pl.cango.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +15,7 @@ import java.util.UUID;
 @Data
 public class ServiceAlias {
     @Id
-    UUID id;
-    UUID service_id;
+    String id;
+    String serviceId;
     String name;
 }
