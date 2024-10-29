@@ -24,9 +24,4 @@ public class CompanyController {
     public List<Company> findAll() {
         return companyRepository.findAll();
     }
-    @GetMapping("/Company/Search")
-    public List<Company> searchCompaniesByName(@RequestParam("name") String name) {
-
-        return companyRepository.findByNameContainingIgnoreCase(name);
-    }
 }
