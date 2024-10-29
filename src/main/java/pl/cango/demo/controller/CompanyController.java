@@ -1,11 +1,7 @@
 package pl.cango.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.cango.demo.model.Company;
 import pl.cango.demo.persistence.repository.CompanyRepository;
 
@@ -19,12 +15,20 @@ public class CompanyController {
     public CompanyController(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
     }
-    @PostMapping ("/Company/save")
-    public Company createCompany (@RequestBody Company company) {
+
+    @PostMapping("/Company/save")
+    public Company createCompany(@RequestBody Company company) {
         return companyRepository.save(company);
     }
-    @GetMapping ("/Company/FindAll")
+
+    @GetMapping("/Company/")
     public List<Company> findAll() {
         return companyRepository.findAll();
     }
+
+    @GetMapping("/Company/{name}")
+    public List<Company> findByName(@PathVariable String name) {
+        return companyRepository.findCompaniesByNameContainingIgnoreCase(name);
+    }
+
 }
