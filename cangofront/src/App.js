@@ -1,21 +1,19 @@
 import './App.css';
 import AppBar from './components/appbar';
 import TextForm from './components/textForm';
-import CompaniesList from './components/companies';
-import CompaniesListDropDown from './components/dropdown';
-import CompaniesListBar from './components/searchingbar';
-import CompaniesSearch from './components/companiesearch';
+import SimpleCompanySearch from './components/simplecompanysearch';
+import SimpleServiceSearch from './components/simpleservicesearch';
+
 
 function App() {
   return (
     <div className="App">
-    {/* <AppBar/> */}
+    <AppBar/>
     {/* <TextForm/> */}
-    {/* <CompaniesList/> */}
-    {/* <CompaniesListDropDown/> */}
-    {/* <CompaniesListBar/> */}
-    
-    {<CompaniesSearch/>}
+
+    {<SimpleCompanySearch/>}
+    {<SimpleServiceSearch/>}
+
     </div>
   );
 }
