@@ -13,4 +13,5 @@ public interface CompanyRepository extends JpaRepository<Company, UUID> {
     List<Company> findCompaniesByNameContainingIgnoreCase(String name);
 
 
+    List<Company> findCompaniesByName(String name);
 }
