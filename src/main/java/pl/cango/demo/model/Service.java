@@ -13,10 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class Service {
-
     @Id
     private String id;
     private String name;
-
-
 }

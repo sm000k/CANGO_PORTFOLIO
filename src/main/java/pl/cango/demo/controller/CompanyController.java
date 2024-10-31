@@ -16,19 +16,23 @@ public class CompanyController {
         this.companyRepository = companyRepository;
     }
 
-    @PostMapping("/Company/save")
+    @PostMapping("/company/add")
     public Company createCompany(@RequestBody Company company) {
         return companyRepository.save(company);
     }
 
-    @GetMapping("/Company/")
+
+    @GetMapping("/company/")
     public List<Company> findAll() {
         return companyRepository.findAll();
     }
 
-    @GetMapping("/Company/{name}")
+
+    @GetMapping("/company/{name}")
     public List<Company> findByName(@PathVariable String name) {
-        return companyRepository.findCompaniesByNameContainingIgnoreCase(name);
+        return companyRepository.findCompaniesByName(name);
     }
+
+
 
 }
