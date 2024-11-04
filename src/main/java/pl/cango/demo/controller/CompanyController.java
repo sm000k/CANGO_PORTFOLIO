@@ -16,11 +16,13 @@ public class CompanyController {
     public CompanyController(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
     }
-    @PostMapping ("/Company/save")
-    public Company createCompany (@RequestBody Company company) {
+
+    @PostMapping("/Company/save")
+    public Company createCompany(@RequestBody Company company) {
         return companyRepository.save(company);
     }
-    @GetMapping ("/Company/FindAll")
+
+    @GetMapping("/Company/FindAll")
     public List<Company> findAll() {
         return companyRepository.findAll();
     }
