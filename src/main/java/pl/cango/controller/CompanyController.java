@@ -1,10 +1,9 @@
-package pl.cango.demo.controller;
+package pl.cango.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pl.cango.demo.model.Company;
-import pl.cango.demo.persistence.repository.CompanyRepository;
+import pl.cango.model.Company;
+import pl.cango.persistence.repository.CompanyRepository;
 
 import java.util.List;
 

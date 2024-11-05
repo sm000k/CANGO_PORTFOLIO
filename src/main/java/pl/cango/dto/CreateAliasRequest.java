@@ -1,4 +1,4 @@
-package pl.cango.demo.dto;
+package pl.cango.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateAliasRequest {
     String name;
-    String ServiceId;
+    String serviceId;
 }
