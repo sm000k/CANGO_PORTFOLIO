@@ -1,4 +1,4 @@
-package pl.cango.controller;
+package pl.cango.persistence.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.cango.model.Service;

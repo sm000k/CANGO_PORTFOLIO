@@ -9,6 +9,7 @@ import pl.cango.dto.CreateAliasRequest;
 
 import pl.cango.model.ServiceAlias;
 import pl.cango.persistence.repository.ServiceAliasRepository;
+import pl.cango.persistence.repository.ServiceRepository;
 
 @RestController
 public class ServiceAliasController {
