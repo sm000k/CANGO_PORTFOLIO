@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Builder
 @Data
-public class ServiceAlias {
+public class Alias {
     @Id
     String id;
     String serviceId;
