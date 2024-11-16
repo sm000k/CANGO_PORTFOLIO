@@ -34,5 +34,10 @@ public class ServiceController {
 
         return serviceRepository.getServiceByServiceAliasName(name);
     }
+    @GetMapping("/serviceHQL/{name}")
+    public List<ServiceDto> getServiceDtoByAliasHQL (@PathVariable String name){
+
+        return serviceRepository.getServiceByServiceAliasNameHQL(name);
+    }
 
 }
