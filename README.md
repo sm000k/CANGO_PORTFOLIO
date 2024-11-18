@@ -4,7 +4,7 @@
 To set database you can use simple docker command:
 
 ```
-docker run -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker run -p 5432:5432 -e POSTGRES_USER=user_demo -e POSTGRES_PASSWORD=password -d postgres
 ```
 This should allow setup docker with postgres. It creates user mentioned in application.properties with it's password.
 
