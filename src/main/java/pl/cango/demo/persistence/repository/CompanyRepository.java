@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.cango.demo.model.Company;
 
 import java.util.List;
-import java.util.UUID;
+import java.util.List;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, UUID> {
@@ -14,4 +14,6 @@ public interface CompanyRepository extends JpaRepository<Company, UUID> {
 
 
     List<Company> findCompaniesByName(String name);
+
+    List<Company> findByNameContainingIgnoreCase(String name);
 }
