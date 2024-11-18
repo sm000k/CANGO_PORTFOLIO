@@ -29,15 +29,14 @@ public class ServiceController {
         return serviceRepository.save(service);
     }
 
+    //    @GetMapping("/service/{name}")
+//    public List<ServiceDto> getServiceDtoByAlias(@PathVariable String name) {
+//
+//        return serviceRepository.getServiceByServiceAliasName(name);
+//    }
     @GetMapping("/service/{name}")
-    public List<ServiceDto> getServiceDtoByAlias(@PathVariable String name) {
-
-        return serviceRepository.getServiceByServiceAliasName(name);
-    }
-    @GetMapping("/serviceHQL/{name}")
-    public List<ServiceDto> getServiceDtoByAliasHQL (@PathVariable String name){
-
-        return serviceRepository.getServiceByServiceAliasNameHQL(name);
+    public List<ServiceDto> getServiceDtoByAliasHQL(@PathVariable String name) {
+        return serviceRepository.getServiceByServiceAliasNamebyCriteriaBuilder(name);
     }
 
 }
