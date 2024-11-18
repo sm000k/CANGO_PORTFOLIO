@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import pl.cango.dto.CreateServiceRequest;
 import pl.cango.dto.CreateServiceResponse;
 
-import pl.cango.model.ServiceEntity;
+import pl.cango.model.ServiceType;
 import pl.cango.persistence.repository.ServiceRepository;
 
 
@@ -19,7 +19,7 @@ public class ServiceService {
     public CreateServiceResponse createService(CreateServiceRequest request) {
 
 
-        ServiceEntity service = ServiceEntity.builder()
+        ServiceType service = ServiceType.builder()
                 .name(request.getName())
                 .build();
         serviceRepository.save(service);

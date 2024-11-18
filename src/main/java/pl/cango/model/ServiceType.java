@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 
-public class ServiceEntity {
+public class ServiceType {
     @Id
     private String id;
     private String name;
