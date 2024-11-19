@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class CreateServiceRequest {
-    private String id;
+
     private String name;
 }

@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.cango.dto.CreateServiceRequest;
 import pl.cango.dto.CreateServiceResponse;
 import pl.cango.persistence.repository.ServiceRepository;
-import pl.cango.service.ServiceService;
+import pl.cango.service.ServiceTypeService;
 
 @RestController
 @RequestMapping("/service")
-public class ServiceController {
+public class ServiceTypeController {
     @Autowired
     ServiceRepository serviceRepository;
     @Autowired
-    ServiceService serviceService;
+    ServiceTypeService serviceTypeService;
 
     @PostMapping("/")
     public ResponseEntity<CreateServiceResponse> addService(@RequestBody CreateServiceRequest request) {
-        return new ResponseEntity<>(serviceService.createService(request), HttpStatus.CREATED);
+        return new ResponseEntity<>(serviceTypeService.createService(request), HttpStatus.CREATED);
     }
 }

@@ -1,5 +1,6 @@
 package pl.cango.dto;
 
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +12,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class CreateServiceResponse {
-    private String id;
+    private String UUID;
     private String name;
 }
