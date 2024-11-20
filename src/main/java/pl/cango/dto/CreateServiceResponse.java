@@ -1,22 +1,17 @@
-package pl.cango.demo.model;
+package pl.cango.dto;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Builder
-@Data
-public class Service {
 
-    @Id
-    private String id;
+public class CreateServiceResponse {
+    private String UUID;
     private String name;
-
-
 }

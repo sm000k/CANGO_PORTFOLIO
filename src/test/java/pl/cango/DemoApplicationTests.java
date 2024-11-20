@@ -1,12 +1,11 @@
-package pl.cango.demo;
+package pl.cango;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import pl.cango.demo.persistence.repository.CompanyRepository;
+import pl.cango.persistence.repository.CompanyRepository;
 
 @SpringBootTest
-class ApplicationTests {
-
+class DemoApplicationTests {
 	private CompanyRepository companyRepository;
 	@Test
 	void contextLoads() {

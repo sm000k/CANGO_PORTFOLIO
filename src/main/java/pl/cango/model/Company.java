@@ -1,4 +1,4 @@
-package pl.cango.demo.model;
+package pl.cango.model;
 
 import jakarta.persistence.*;
 import lombok.*;
