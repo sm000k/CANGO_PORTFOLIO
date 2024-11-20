@@ -24,9 +24,8 @@ public class AliasService {
             throw new IllegalArgumentException("Service with ID " + request.getServiceId() + " does not exist.");
         }
 
-        Random random = new Random();
+
         Alias serviceAlias = Alias.builder()
-                .id(String.valueOf(random.nextInt()))
                 .name(request.getName())
                 .serviceId(request.getServiceId())
                 .build();

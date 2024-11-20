@@ -25,15 +25,12 @@ public class AliasController {
     ServiceRepository serviceRepository;
     @Autowired
     AliasService aliasService;
-    final private Logger logger = LoggerFactory.getLogger(AliasController.class);
+    private final Logger logger = LoggerFactory.getLogger(AliasController.class);
 
     @PostMapping("/")
-    public ResponseEntity<CreateAliasResponse> createAlias(@RequestBody CreateAliasRequest request) {
-
-        logger.info("Request name: {}", request.getName());
-        logger.info("Service ID: {}", request.getServiceId());
-
-        return new ResponseEntity<>(aliasService.createAlias(request), HttpStatus.CREATED);
+    public CreateAliasResponse createAlias(@RequestBody CreateAliasRequest request) {
+        logger.info("Processing request to create alias: name: {}, service: {}", request.getName(), request.getServiceId());
+        return aliasService.createAlias(request);
     }
 
 }
