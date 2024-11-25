@@ -16,11 +16,8 @@ import java.util.UUID;
 @Builder
 @Data
 public class ServiceType {
-
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;
     private String name;
-
-
 }
