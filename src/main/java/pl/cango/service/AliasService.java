@@ -27,7 +27,7 @@ public class AliasService {
 
         Alias serviceAlias = Alias.builder()
                 .name(request.getName())
-                .serviceId(request.getServiceId())
+                .service(serviceRepository.findbyId(request.getServiceId()))
                 .build();
 
         aliasRepository.save(serviceAlias);
