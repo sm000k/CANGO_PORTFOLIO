@@ -7,7 +7,7 @@ import pl.cango.model.ServiceType;
 import java.util.Collection;
 
 @Repository
-public interface ServiceRepository extends JpaRepository<ServiceType, String> {
+public interface ServiceRepository extends JpaRepository<ServiceType,String> {
 
     Collection<Object> findByName(String name);
 }
