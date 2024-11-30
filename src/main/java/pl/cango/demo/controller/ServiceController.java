@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import pl.cango.demo.dto.ServiceDto;
 import pl.cango.demo.model.Service;
+import pl.cango.demo.persistence.repository.ServiceCustomRepository;
 import pl.cango.demo.persistence.repository.ServiceRepository;
 
 import java.util.List;
@@ -15,8 +16,12 @@ public class ServiceController {
     @Autowired
     private final ServiceRepository serviceRepository;
 
-    public ServiceController(ServiceRepository serviceRepository) {
+    @Autowired
+    private final ServiceCustomRepository serviceCustomRepository;
+
+    public ServiceController(ServiceRepository serviceRepository, ServiceCustomRepository serviceCustomRepository) {
         this.serviceRepository = serviceRepository;
+        this.serviceCustomRepository = serviceCustomRepository;
     }
 
     @GetMapping("/service/")
@@ -36,7 +41,7 @@ public class ServiceController {
 //    }
     @GetMapping("/service/{name}")
     public List<ServiceDto> getServiceDtoByAliasHQL(@PathVariable String name) {
-        return serviceRepository.getServiceByServiceAliasNamebyCriteriaBuilder(name);
+        return serviceCustomRepository.getServiceByServiceAliasNamebyCriteriaBuilder(name);
     }
 
 }

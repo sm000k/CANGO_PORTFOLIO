@@ -17,7 +17,7 @@ public class ServiceAlias {
     String id;
 
     String name;
-    @ManyToOne(fetch = FetchType.LAZY)
+//    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
     private Service service;
 
