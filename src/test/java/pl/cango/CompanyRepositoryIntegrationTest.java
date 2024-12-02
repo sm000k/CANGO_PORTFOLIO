@@ -1,13 +1,19 @@
 package pl.cango;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import pl.cango.demo.dto.ServiceDto;
 import pl.cango.model.Company;
+import pl.cango.demo.model.Service;
 import pl.cango.persistence.repository.CompanyRepository;
+import pl.cango.demo.persistence.repository.ServiceCustomRepository;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
