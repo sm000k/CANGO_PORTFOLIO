@@ -1,4 +1,4 @@
-package pl.cango.demo.model;
+package pl.cango.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Builder
 @Data
-public class ServiceAlias {
+public class Alias {
     @Id
     String id;
 

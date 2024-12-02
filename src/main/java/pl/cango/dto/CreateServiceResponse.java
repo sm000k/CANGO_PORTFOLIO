@@ -1,4 +1,4 @@
-package pl.cango.demo.model;
+package pl.cango.dto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,12 +11,9 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Builder
-@Data
-public class Service {
-    @Id
-    private String id;
+
+public class CreateServiceResponse {
+    private String UUID;
     private String name;
 
 
