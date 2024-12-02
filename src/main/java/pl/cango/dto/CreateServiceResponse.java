@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pl.cango.model.Alias;
 
 import java.util.Collection;
 import java.util.UUID;
@@ -17,20 +18,20 @@ import java.util.UUID;
 @Entity
 @Builder
 @Data
-public class Service {
+public class CreateServiceResponse {
     @Id
     private String id;
     private String name;
 
 
     @OneToMany(mappedBy = "service")
-    private Collection<ServiceAlias> serviceAlias;
+    private Collection<Alias> serviceAlias;
 
-    public Collection<ServiceAlias> getServiceAlias() {
+    public Collection<Alias> getServiceAlias() {
         return serviceAlias;
     }
 
-    public void setServiceAlias(Collection<ServiceAlias> serviceAlias) {
+    public void setServiceAlias(Collection<Alias> serviceAlias) {
         this.serviceAlias = serviceAlias;
     }
 }
