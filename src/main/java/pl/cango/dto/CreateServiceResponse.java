@@ -1,17 +1,36 @@
 package pl.cango.dto;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Builder
+import java.util.Collection;
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class CreateServiceResponse {
-    private String UUID;
+@Entity
+@Builder
+@Data
+public class Service {
+    @Id
+    private String id;
     private String name;
+
+
+    @OneToMany(mappedBy = "service")
+    private Collection<ServiceAlias> serviceAlias;
+
+    public Collection<ServiceAlias> getServiceAlias() {
+        return serviceAlias;
+    }
+
+    public void setServiceAlias(Collection<ServiceAlias> serviceAlias) {
+        this.serviceAlias = serviceAlias;
+    }
 }
