@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 public class CreateServiceRequest {
 
     private String name;
+    private String ServiceId;
 }

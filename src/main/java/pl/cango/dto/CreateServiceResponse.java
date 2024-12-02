@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pl.cango.model.ServiceType;
 import pl.cango.model.Alias;
 
 import java.util.Collection;
@@ -23,7 +24,6 @@ public class CreateServiceResponse {
     private String id;
     private String name;
 
-
     @OneToMany(mappedBy = "service")
     private Collection<Alias> serviceAlias;
 
@@ -35,3 +35,4 @@ public class CreateServiceResponse {
         this.serviceAlias = serviceAlias;
     }
 }
+

@@ -11,4 +11,6 @@ import java.util.Collection;
 public interface ServiceRepository extends JpaRepository<ServiceType,String> {
 
     Collection<Object> findByName(String name);
+
+    ServiceType findbyId(String serviceId);
 }
