@@ -6,28 +6,30 @@ import org.springframework.stereotype.Service;
 import pl.cango.dto.CreateAliasRequest;
 import pl.cango.dto.CreateAliasResponse;
 import pl.cango.model.Alias;
+import pl.cango.model.ServiceType;
 import pl.cango.persistence.repository.AliasRepository;
-import pl.cango.persistence.repository.ServiceRepository;
+import pl.cango.persistence.repository.ServiceTypeRepository;
 
-import java.util.Random;
-import java.util.UUID;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
 public class AliasService {
 
     private final AliasRepository aliasRepository;
-    private final ServiceRepository serviceRepository;
+    private final ServiceTypeRepository serviceTypeRepository;
 
     public CreateAliasResponse createAlias(CreateAliasRequest request) {
-        if (!serviceRepository.existsById(request.getServiceId())) {
+        Optional<ServiceType> serviceTypeOptional = serviceTypeRepository.findById(request.getServiceId());
+        if (!serviceTypeOptional.isPresent()) {
             throw new IllegalArgumentException("Service with ID " + request.getServiceId() + " does not exist.");
         }
 
+        ServiceType serviceType = serviceTypeOptional.get();
 
         Alias serviceAlias = Alias.builder()
                 .name(request.getName())
-                .service(serviceRepository.findbyId(request.getServiceId()))
+                .serviceType(serviceType)
                 .build();
 
         aliasRepository.save(serviceAlias);

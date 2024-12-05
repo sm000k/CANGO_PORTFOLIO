@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.cango.dto.CreateServiceRequest;
 import pl.cango.dto.CreateServiceResponse;
-import pl.cango.persistence.repository.ServiceRepository;
+import pl.cango.persistence.repository.ServiceTypeRepository;
 import pl.cango.service.ServiceTypeService;
 
 @RestController
 @RequestMapping("/service")
 public class ServiceTypeController {
     @Autowired
-    ServiceRepository serviceRepository;
+    ServiceTypeRepository serviceTypeRepository;
     @Autowired
     ServiceTypeService serviceTypeService;
 

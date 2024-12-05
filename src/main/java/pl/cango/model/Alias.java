@@ -15,10 +15,9 @@ import lombok.NoArgsConstructor;
 public class Alias {
     @Id
     String id;
-
     String name;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    private ServiceType service;
+    private ServiceType serviceType;
 
 }
