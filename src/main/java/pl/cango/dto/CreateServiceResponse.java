@@ -4,10 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.cango.model.ServiceType;
 import pl.cango.model.Alias;
 
@@ -24,15 +21,10 @@ public class CreateServiceResponse {
     private String id;
     private String name;
 
+    @Setter
+    @Getter
     @OneToMany(mappedBy = "service")
-    private Collection<Alias> serviceAlias;
+    private Collection<Alias> AliasService;
 
-    public Collection<Alias> getServiceAlias() {
-        return serviceAlias;
-    }
-
-    public void setServiceAlias(Collection<Alias> serviceAlias) {
-        this.serviceAlias = serviceAlias;
-    }
 }
 

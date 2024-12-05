@@ -9,8 +9,9 @@ import pl.cango.dto.CreateServiceRequest;
 import pl.cango.dto.CreateServiceResponse;
 
 import pl.cango.model.ServiceType;
+import pl.cango.persistence.repository.AliasRepository;
 import pl.cango.persistence.repository.ServiceRepository;
-import pl.cango.persistence.repository.ServiceAliasRepository;
+import pl.cango.persistence.repository.AliasRepository;
 
 @Service
 @AllArgsConstructor
@@ -18,13 +19,13 @@ public class ServiceTypeService {
 
 
     private final ServiceRepository serviceRepository;
-    private final ServiceAliasRepository ServiceAliasRepository;
+    private final AliasRepository AliasRepository;
 
     private static final Logger logger = LoggerFactory.getLogger(ServiceTypeService.class);
 
     public CreateServiceResponse createService(CreateServiceRequest request) {
         if (serviceRepository.findByName(request.getName()).isEmpty() &&
-                ServiceAliasRepository.findByName(request.getName()).isEmpty()) {
+                AliasRepository.findByName(request.getName()).isEmpty()) {
             ServiceType service = ServiceType.builder()
                     .name(request.getName())
                     .build();
