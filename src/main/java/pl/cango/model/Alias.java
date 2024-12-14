@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,10 +16,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class Alias {
     @Id
-    String id;
+    @GeneratedValue (generator = "UUID")
+    private UUID id;
     String name;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
     private ServiceType serviceType;
-
 }
