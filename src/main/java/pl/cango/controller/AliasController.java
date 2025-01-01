@@ -2,31 +2,24 @@ package pl.cango.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.cango.dto.CreateAliasRequest;
 import pl.cango.dto.CreateAliasResponse;
-import pl.cango.persistence.repository.AliasRepository;
-import pl.cango.persistence.repository.ServiceTypeRepository;
 import pl.cango.service.AliasService;
 
 @RestController
-@RequestMapping("/alias")
-public class AliasController {
-    @Autowired
-    AliasRepository aliasRepository;
-    @Autowired
-    ServiceTypeRepository serviceTypeRepository;
-    @Autowired
-    AliasService aliasService;
+@RequestMapping("/service")
+class AliasController {
     private final Logger logger = LoggerFactory.getLogger(AliasController.class);
+    private final AliasService aliasService;
 
-    @PostMapping("/")
-    public CreateAliasResponse createAlias(@RequestBody CreateAliasRequest request) {
-        logger.info("Processing request to create alias: name: {}, service: {}", request.getName(), request.getServiceId());
+    AliasController(AliasService aliasService) {
+        this.aliasService = aliasService;
+    }
+
+    @PostMapping("/{serviceid}/alias")
+    CreateAliasResponse createAlias(@RequestBody CreateAliasRequest request, @PathVariable String serviceid) {
+        logger.info("Processing request to create alias: name: {}, service: {}", request.getName(), serviceid);
         return aliasService.createAlias(request);
     }
 
