@@ -25,7 +25,7 @@ public class DatabaseInitializer {
             logger.info("Loading data...");
             if (serviceTypeRepository.count() == 0) {
                 // dodawanie aktywności populowanie tablicy serviType
-                List serviceTypeCollection = List.of(
+                List <ServiceType> serviceTypeCollection = List.of(
                         new ServiceType(UUID.randomUUID(), "basen"),
                         new ServiceType(UUID.randomUUID(), "hokej"),
                         new ServiceType(UUID.randomUUID(), "tenis"),
@@ -36,15 +36,17 @@ public class DatabaseInitializer {
             }
             if (aliasRepository.count() == 0) {
                 // populowanie tablicy alias
-                List aliasCollection = List.of(
-                        new Alias(UUID.randomUUID(), "pływanie", (ServiceType) serviceTypeRepository.findByName("basen").stream().findFirst().orElse(null)),
-                        new Alias(UUID.randomUUID(), "pływalnia", (ServiceType) serviceTypeRepository.findByName("basen").stream().findFirst().orElse(null)),
-                        new Alias(UUID.randomUUID(), "football", (ServiceType) serviceTypeRepository.findByName("piłka nożna").stream().findFirst().orElse(null)),
-                        new Alias(UUID.randomUUID(), "futbol", (ServiceType) serviceTypeRepository.findByName("piłka nożna").stream().findFirst().orElse(null)),
-                        new Alias(UUID.randomUUID(), "piłka", (ServiceType) serviceTypeRepository.findByName("piłka nożna").stream().findFirst().orElse(null))
-                );
+                List <Alias> aliasCollection = List.of
+                        (
+                                new Alias(UUID.randomUUID(), "pływanie", (ServiceType) serviceTypeRepository.findByName("basen").stream().findFirst().orElse(null)),
+                                new Alias(UUID.randomUUID(), "pływalnia", (ServiceType) serviceTypeRepository.findByName("basen").stream().findFirst().orElse(null)),
+                                new Alias(UUID.randomUUID(), "football", (ServiceType) serviceTypeRepository.findByName("piłka nożna").stream().findFirst().orElse(null)),
+                                new Alias(UUID.randomUUID(), "futbol", (ServiceType) serviceTypeRepository.findByName("piłka nożna").stream().findFirst().orElse(null)),
+                                new Alias(UUID.randomUUID(), "piłka", (ServiceType) serviceTypeRepository.findByName("piłka nożna").stream().findFirst().orElse(null))
+                        );
                 aliasRepository.saveAll(aliasCollection);
             }
         };
+
     }
 }
