@@ -1,14 +1,19 @@
 package pl.cango.service;
 
 import lombok.AllArgsConstructor;
+import org.apache.coyote.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pl.cango.dto.CreateServiceRequest;
 import pl.cango.dto.CreateServiceResponse;
+import pl.cango.model.Company;
 import pl.cango.model.ServiceType;
 import pl.cango.persistence.repository.AliasRepository;
 import pl.cango.persistence.repository.ServiceTypeRepository;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -35,5 +40,9 @@ public class ServiceTypeService {
             return null;
         }
 
+    }
+
+    public List<ServiceType> findAll() {
+        return serviceTypeRepository.findAll();
     }
 }

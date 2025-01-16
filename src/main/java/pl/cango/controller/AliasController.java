@@ -22,5 +22,10 @@ class AliasController {
         logger.info("Processing request to create alias: name: {}, service: {}", request.getName(), serviceid);
         return aliasService.createAlias(request);
     }
+    @GetMapping("/test")
+    public String testError() {
+//        yourService.performAction();  // Wywoła wyjątek
+        return "Działanie zakończone sukcesem";
+    }
 
 }

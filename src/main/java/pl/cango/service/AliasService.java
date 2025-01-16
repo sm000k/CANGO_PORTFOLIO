@@ -21,9 +21,9 @@ public class AliasService {
 
     public CreateAliasResponse createAlias(CreateAliasRequest request) {
         Optional<ServiceType> serviceTypeOptional = serviceTypeRepository.findById(request.getServiceId());
-        if (!serviceTypeOptional.isPresent()) {
-            throw new IllegalArgumentException("Service with ID " + request.getServiceId() + " does not exist.");
-        }
+//        if (serviceTypeOptional.isEmpty()) {
+//            throw new IllegalArgumentException("Service with ID " + request.getServiceId() + " does not exist.");
+//        }
 
         ServiceType serviceType = serviceTypeOptional.get();
 
