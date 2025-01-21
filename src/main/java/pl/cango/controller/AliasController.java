@@ -16,6 +16,7 @@ import javax.management.ServiceNotFoundException;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/alias")
 class AliasController {
     private final Logger logger = LoggerFactory.getLogger(AliasController.class);
