@@ -16,6 +16,7 @@ import pl.cango.service.ServiceTypeService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/service")
 public class ServiceTypeController {
 
