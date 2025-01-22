@@ -13,7 +13,9 @@ import pl.cango.model.ServiceType;
 import pl.cango.service.AliasService;
 
 import javax.management.ServiceNotFoundException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -31,11 +33,11 @@ class AliasController {
         logger.info("Processing request to create alias: name: {}, service: {}", request.getName(), serviceid);
         return aliasService.createAlias(request);
     }
+
     @GetMapping("/")
     public ResponseEntity<List<Alias>> findAll() {
         List<Alias> results = aliasService.findAll();
 
-        // Przykład z nagłówkami
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Total-Count", String.valueOf(results.size()));
 
@@ -44,10 +46,12 @@ class AliasController {
                 .headers(headers)
                 .body(results);
     }
+
     @GetMapping("/test")
-    public String testError() {
-//        yourService.performAction();  // Wywoła wyjątek
-        return "Działanie zakończone sukcesem";
+    public Map<String, Object> testError() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("success", true);
+        return response;
     }
 
 }
