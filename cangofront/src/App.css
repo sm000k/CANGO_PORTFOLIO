@@ -37,16 +37,24 @@
   }
 }
 
+/* .container {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto;  
+} 
+*/
 .container {
   display: flex;
-  justify-content: space-between; /* Rozkłada przyciski równomiernie */
-  width: 100%;
-  max-width: 600px; /* Ograniczenie szerokości */
-  margin: 0 auto;  /* Wyśrodkowanie kontenera */
+  flex-direction: column;
+  gap: 10px; /* Optional: Adds space between buttons */
+  align-items: flex-end; 
 }
 
-button {
-  width: 100px;
-  height: 40px;
+
+/* button {
+  width: 150px;
+  height: 80px;
   font-size: 16px;
-}
+} */
