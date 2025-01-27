@@ -10,6 +10,7 @@ import pl.cango.model.ServiceType;
 import pl.cango.persistence.repository.AliasRepository;
 import pl.cango.persistence.repository.ServiceTypeRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -20,12 +21,8 @@ public class AliasService {
     private final ServiceTypeRepository serviceTypeRepository;
 
     public CreateAliasResponse createAlias(CreateAliasRequest request) {
-        Optional<ServiceType> serviceTypeOptional = serviceTypeRepository.findById(request.getServiceId());
-        if (!serviceTypeOptional.isPresent()) {
-            throw new IllegalArgumentException("Service with ID " + request.getServiceId() + " does not exist.");
-        }
-
-        ServiceType serviceType = serviceTypeOptional.get();
+        ServiceType serviceType = serviceTypeRepository.findById(request.getServiceId())
+                .orElseThrow(() -> new ServiceTypeNotFound("Service with ID " + request.getServiceId() + " does not exist."));
 
         Alias serviceAlias = Alias.builder()
                 .name(request.getName())
@@ -41,4 +38,7 @@ public class AliasService {
     }
 
 
+    public List<Alias> findAll() {
+        return aliasRepository.findAll();
+    }
 }

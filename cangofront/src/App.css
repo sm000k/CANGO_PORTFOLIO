@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Rozkłada przyciski równomiernie */
+  width: 100%;
+  max-width: 600px; /* Ograniczenie szerokości */
+  margin: 0 auto;  /* Wyśrodkowanie kontenera */
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+}
