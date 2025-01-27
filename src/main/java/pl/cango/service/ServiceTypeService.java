@@ -10,6 +10,11 @@ import pl.cango.model.ServiceType;
 import pl.cango.persistence.repository.AliasRepository;
 import pl.cango.persistence.repository.ServiceTypeRepository;
 
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.UUID;
+
 @Service
 @AllArgsConstructor
 public class ServiceTypeService {
@@ -26,9 +31,12 @@ public class ServiceTypeService {
             ServiceType service = ServiceType.builder()
                     .name(request.getName())
                     .build();
+
             serviceTypeRepository.save(service);
+
             return CreateServiceResponse.builder()
                     .name(service.getName())
+                    .id(service.getId().toString())
                     .build();
         } else {
             logger.error("Service with name {} already exists", request.getName());
