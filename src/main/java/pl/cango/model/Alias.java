@@ -19,7 +19,7 @@ public class Alias {
     @GeneratedValue (generator = "UUID")
     private UUID id;
     String name;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "service_id")
     private ServiceType serviceType;
 }
