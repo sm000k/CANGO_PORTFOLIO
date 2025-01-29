@@ -7,7 +7,7 @@ function AppBar() {
   return (
     <Navbar bg="primary" variant="dark" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">MyApp</Navbar.Brand>
+        <Navbar.Brand href="#home">CANGO</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">

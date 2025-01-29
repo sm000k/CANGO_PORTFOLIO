@@ -11,7 +11,6 @@ import pl.cango.persistence.repository.AliasRepository;
 import pl.cango.persistence.repository.ServiceTypeRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service

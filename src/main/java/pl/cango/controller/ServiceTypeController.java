@@ -21,8 +21,11 @@ import java.util.List;
 public class ServiceTypeController {
 
 
-    @Autowired
-    ServiceTypeService serviceTypeService;
+    private final ServiceTypeService serviceTypeService;
+
+    public ServiceTypeController(ServiceTypeService serviceTypeService) {
+        this.serviceTypeService = serviceTypeService;
+    }
 
     @PostMapping("/")
     public ResponseEntity<CreateServiceResponse> addService(@RequestBody CreateServiceRequest request) {
