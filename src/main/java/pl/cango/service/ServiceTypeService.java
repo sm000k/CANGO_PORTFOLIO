@@ -44,4 +44,8 @@ public class ServiceTypeService {
         }
 
     }
+
+    public List<ServiceType> findAll() {
+        return serviceTypeRepository.findAll();
+    }
 }
