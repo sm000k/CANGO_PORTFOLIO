@@ -14,7 +14,7 @@ import pl.cango.persistence.repository.ServiceTypeRepository;
 import java.util.List;
 import java.util.UUID;
 
-@Configuration
+
 public class DatabaseInitializer {
 
     private final Logger logger = LoggerFactory.getLogger(DatabaseInitializer.class);
@@ -35,7 +35,7 @@ public class DatabaseInitializer {
                 serviceTypeRepository.saveAll(serviceTypeCollection);
             }
             if (aliasRepository.count() == 0) {
-                // populowanie tablicy alias
+                // populating alias table
                 List <Alias> aliasCollection = List.of
                         (
                                 new Alias(UUID.randomUUID(), "pływanie", (ServiceType) serviceTypeRepository.findByName("basen").stream().findFirst().orElse(null)),

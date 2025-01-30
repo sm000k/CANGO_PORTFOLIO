@@ -1,0 +1,22 @@
+{
+  "serviceTypes": [
+    {
+      "name": "basen"
+    },
+    {
+      "name": "hokej"
+    },
+    {
+      "name": "tenis"
+    },
+    {
+      "name": "siatkówka"
+    },
+    {
+      "name": "szachy"
+    },
+    {
+      "name": "piłka nożna"
+    }
+  ]
+}
