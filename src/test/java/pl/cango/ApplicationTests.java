@@ -1,15 +1,21 @@
 package pl.cango;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import pl.cango.persistence.repository.CompanyRepository;
+import pl.cango.controller.MySimpleController;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest
 class ApplicationTests {
 
-	private CompanyRepository companyRepository;
+	@Autowired
+	private MySimpleController controller;
+
 	@Test
-	void contextLoads() {
+	void contextLoads() throws Exception {
+		assertThat(controller).isNotNull();
 	}
 
 }

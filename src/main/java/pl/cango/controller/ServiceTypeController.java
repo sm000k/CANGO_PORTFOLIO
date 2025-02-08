@@ -35,7 +35,7 @@ public class ServiceTypeController {
     public ResponseEntity<List<ServiceType>> findAll() {
         List<ServiceType> results = serviceTypeService.findAll();
 
-        // Przykład z nagłówkami
+        // example with header response
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Total-Count", String.valueOf(results.size()));
 
