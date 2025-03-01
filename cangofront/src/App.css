@@ -1,93 +1,104 @@
+/* Reset and base styles */
 .App {
   text-align: center;
-  background-color: #f5f5f5; /* Light gray background */
-  color: #333; /* Dark gray text */
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Main container styling */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Column styling */
+.column {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons container */
+.buttons-container {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
   padding: 20px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Space between components */
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: flex-end; /* Align buttons to the right */
-  gap: 10px; /* Space between buttons */
-  width: 100%;
-}
-
-button {
-  width: auto;
-  height: auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  background-color: #4CAF50; /* Soft green background */
-  color: white; /* White text */
-  cursor: pointer;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-button:hover {
-  background-color: #388E3C; /* Darker green on hover */
-}
-
-.date-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  width: 100%;
-}
-
-.date-fields div {
-  display: flex;
-  flex-direction: column;
-}
-
-.date-fields label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #333; /* Dark gray text */
-}
-
-.date-fields input {
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.date-fields button {
-  background-color: #4CAF50; /* Soft green background */
-  color: white; /* White text */
+/* Button styling */
+.fetch-data-button {
+  padding: 12px 24px;
   border: none;
-  padding: 10px 20px;
+  border-radius: 6px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #2196f3;
+  color: white;
+}
+
+.fetch-data-button:hover {
+  background-color: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* AppBar styling */
+.appbar {
+  background-color: #1976d2;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 968px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .column {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Search components common styling */
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
-.date-fields button:hover {
-  background-color: #388E3C; /* Darker green on hover */
+/* Date fields styling */
+.date-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
-.date-fields p {
-  color: red; /* Error message color */
+/* Component titles */
+.component-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
