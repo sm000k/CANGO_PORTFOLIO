@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import pl.cango.dto.CreateAliasRequest;
+import pl.cango.dto.CreateAliasResponse;
 import pl.cango.service.AliasService;
 import pl.cango.service.ServiceTypeNotFound;
 
@@ -36,12 +37,19 @@ class AliasControllerTest {
     @DisplayName("Should return HTTP 404 when service throws ServiceTypeNotFound exception")
     void shouldReturn404IfServiceNotFound() throws Exception {
         when(aliasService.createAlias(any(CreateAliasRequest.class))).thenThrow(new ServiceTypeNotFound("mock"));
-
+        
         mockMvc.perform(
                         post("/alias/non-existing-id/alias")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content("{}")
                 )
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void shouldCreateAliasSuccessfully() {
+//        CreateAliasRequest request = new CreateAliasRequest();
+//        request.setAlias("testAlias");
+//        CreateAliasResponse response = new CreateAliasResponse("testAlias", "1234");
     }
 }

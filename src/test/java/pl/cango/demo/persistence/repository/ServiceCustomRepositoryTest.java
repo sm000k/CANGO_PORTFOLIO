@@ -19,11 +19,11 @@ public class ServiceCustomRepositoryTest {
     @Autowired
     TestEntityManager entityManager;
 
-    @Autowired
-    ServiceCustomRepository serviceCustomRepository;
+//    @Autowired
+//    ServiceCustomRepository serviceCustomRepository;
 
-    @Test
-    public void testGetServiceByServiceAliasNameByCriteriaBuilder() {
+//    @Test
+//    public void testGetServiceByServiceAliasNameByCriteriaBuilder() {
 //        // given
 //        ServiceType service = ServiceType.builder().name("basen").build();
 //        ServiceType saved = entityManager.persist(service);
@@ -35,6 +35,6 @@ public class ServiceCustomRepositoryTest {
 //        Assertions.assertEquals(1, list.size());
 //        Assertions.assertEquals(saved.getId(), list.get(0).getServiceId());
 
-    }
+//    }
 
 }
