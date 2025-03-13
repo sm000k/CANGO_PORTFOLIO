@@ -1,34 +1,31 @@
 // src/App.js
 import "./App.css";
 import AppBar from "./components/appbar";
-import TextForm from "./components/textForm";
-import SimpleCompanySearch from "./components/simplecompanysearch";
-import SimpleServiceSearch from "./components/simpleservicesearch";
-import FetchDataButton from "./components/fetchbutton";
-import DateFields from "./components/DateFields";
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminPanel from './components/AdminPanel';
+import HomePage from './components/HomePage';
+import FeaturesPage from './components/FeaturesPage';
+import PricingPage from './components/PricingPage';
 
 function App() {
   return (
-    <div className="App">
-      <AppBar />
-      <div className="container">
-        <div className="column">
-          <SimpleServiceSearch />
-        </div>
-        <div className="column">
-          <SimpleCompanySearch />
-        </div>
-        <div className="column">
-          <DateFields />
-        </div>
-        <div className="buttons-container">
-          <FetchDataButton className="fetch-data-button" endpoint="service" />
-          <FetchDataButton className="fetch-data-button" endpoint="alias" />
-          <button className="fetch-data-button">Sign Can</button>
-        </div>
+    <Router>
+      <div className="App">
+        <AppBar />
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/features" element={<FeaturesPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+        </Routes>
+        <footer>
+          <p>
+            For more information, visit our <a href="https://github.com/sm000k/CANGO_PORTFOLIO" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
+          </p>
+        </footer>
       </div>
-    </div>
+    </Router>
   );
 }
 

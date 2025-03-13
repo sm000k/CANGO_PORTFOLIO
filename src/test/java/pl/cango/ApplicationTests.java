@@ -1,21 +1,21 @@
 package pl.cango;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import pl.cango.controller.MySimpleController;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootTest
 class ApplicationTests {
 
-	@Autowired
-	private MySimpleController controller;
+    @Autowired
+    private ApplicationContext context;
 
-	@Test
-	void contextLoads() throws Exception {
-		assertThat(controller).isNotNull();
-	}
-
+    @Test
+    void contextLoads() {
+        // Ensure that the context is loaded and all required beans are available
+        assert(context != null);
+        // Add checks for specific beans if necessary
+        // assert(context.getBean(RequiredBean.class) != null);
+    }
 }

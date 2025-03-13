@@ -13,13 +13,15 @@ public class HeartbeatService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Scheduled(fixedRate = 300000) // Co 5 minut (300000 ms)
-    public void sendHeartbeat() {
+    @Scheduled(fixedRate = 1500) // Co 5 minut (300000 ms)
+    public String sendHeartbeat() {
         try {
             jdbcTemplate.execute("SELECT 1");
             System.out.println("Heartbeat sent to database.");
+            return "heartBeat";
         } catch (Exception e) {
             System.err.println("Database heartbeat failed: " + e.getMessage());
         }
+       return "null";
     }
 }

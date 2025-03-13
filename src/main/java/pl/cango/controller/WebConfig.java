@@ -17,7 +17,8 @@ public class WebConfig implements WebMvcConfigurer {
                 registry.addMapping("/**") // Zezwala na wszystkie endpointy
                         .allowedOrigins(
                                 "http://localhost:3000",  // Dla lokalnego frontendu
-                                "https://cangofront.vercel.app" // Dla wersji produkcyjnej na Vercel
+                                "https://cangofront.vercel.app", // Dla wersji produkcyjnej na Vercel
+                                "https://www.cron-job.org"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Metody HTTP
                         .allowedHeaders("*") // Pozwala na wszystkie nagłówki

@@ -12,7 +12,7 @@
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 50px; /* Adjust gap to 50px */
   justify-content: center;
 }
 
@@ -24,15 +24,16 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px; /* Add margin-bottom to separate vertically */
 }
 
 /* Buttons container */
 .buttons-container {
   width: 100%;
   display: flex;
-  gap: 15px;
+  gap: 50px; /* Adjust gap to 50px */
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px; /* Adjust margin-top to 50px */
   padding: 20px;
 }
 
@@ -101,4 +102,55 @@
   color: #333;
   margin-bottom: 1rem;
   font-weight: 500;
+}
+
+.controls-container {
+  margin-top: 20px;
+}
+
+.home-layout {
+  display: flex;
+  gap: 50px; /* Adjust gap to 50px */
+  justify-content: center; /* Center the search column */
+  align-items: flex-start; /* Align items at the top */
+}
+
+.filters-column {
+  flex: 1;
+  min-width: 300px; /* Adjust width as needed */
+  position: sticky; /* Make the filters column sticky */
+  top: 50px;
+  left: 0; /* Stick to the left side of the screen */
+}
+
+.search-column {
+  flex: 2; /* Make the search column twice as wide */
+  min-width: 600px; /* Adjust width as needed */
+}
+
+.datefields-column {
+  flex: 1;
+  min-width: 300px; /* Adjust width as needed */
+}
+
+.filters-box, .search-column, .datefields-column {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.filters {
+  margin-top: 20px;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.filters input[type="checkbox"] {
+  margin-right: 10px;
 }
